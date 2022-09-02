@@ -1,0 +1,63 @@
+[
+  {
+    "name": "RunsSSHCommand",
+    "type": "RunSSHCommand",
+    "module": "RunSSHCommand",
+    "action": "RunSSHCommand",
+    "groupTitle": "SSH",
+    "groupIcon": "fas fa-lg fa-file comp-files",
+    "title": "Run SSH Command",
+    "icon": "fad fa-lg fa-file comp-files",
+    "dataScheme": [],
+    "dataPick": true,
+    "dataPickObject": true,
+    "usedModules": {
+      "node": {
+        "ssh2shell": "^2.0.6"
+      }
+    },
+    "properties": [
+      {
+        "group": "Run SSH Command Properties",
+        "variables": [
+          {
+            "name": "sshKey",
+            "optionName": "sshKey",
+            "title": "SSH Key",
+            "type": "file",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true
+          },
+          {
+            "name": "commands",
+            "optionName": "commands",
+            "title": "Commands",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true
+          },
+          {
+            "name": "hostDetail",
+            "optionName": "hostDetail",
+            "title": "Host",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true
+          },
+          {
+            "name": "username",
+            "optionName": "username",
+            "title": "Username",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true
+          }
+        ]
+      }
+    ]
+  }
+]
