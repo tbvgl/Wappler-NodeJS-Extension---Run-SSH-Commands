@@ -1,63 +1,86 @@
-[
-  {
-    "name": "RunsSSHCommand",
-    "type": "RunSSHCommand",
-    "module": "RunSSHCommand",
-    "action": "RunSSHCommand",
-    "groupTitle": "SSH",
-    "groupIcon": "fas fa-lg fa-file comp-files",
-    "title": "Run SSH Command",
-    "icon": "fad fa-lg fa-file comp-files",
-    "dataScheme": [],
-    "dataPick": true,
-    "dataPickObject": true,
-    "usedModules": {
-      "node": {
-        "ssh2shell": "^2.0.6"
-      }
+{
+  "type": "runSSHCommand",
+  "module": "runSSHCommand",
+  "action": "runSSHCommand",
+  "groupTitle": "SSH",
+  "groupIcon": "fas fa-lg fa-table comp-data",
+  "title": "Run SSH Command",
+  "icon": "fas fa-lg fa-table comp-data ",
+  "dataPickObject": true,
+  "dataScheme": [
+    {
+      "name": "exportstdout",
+      "type": "text",
+      "optionName": "exportstdout"
     },
-    "properties": [
-      {
-        "group": "Run SSH Command Properties",
-        "variables": [
-          {
-            "name": "sshKey",
-            "optionName": "sshKey",
-            "title": "SSH Key",
-            "type": "file",
-            "defaultValue": "",
-            "serverDataBindings": true,
-            "required": true
-          },
-          {
-            "name": "commands",
-            "optionName": "commands",
-            "title": "Commands",
-            "type": "text",
-            "defaultValue": "",
-            "serverDataBindings": true,
-            "required": true
-          },
-          {
-            "name": "hostDetail",
-            "optionName": "hostDetail",
-            "title": "Host",
-            "type": "text",
-            "defaultValue": "",
-            "serverDataBindings": true,
-            "required": true
-          },
-          {
-            "name": "username",
-            "optionName": "username",
-            "title": "Username",
-            "type": "text",
-            "defaultValue": "",
-            "serverDataBindings": true,
-            "required": true
-          }
-        ]
-      }
-    ]
-  }
-]
+    {
+      "name": "error",
+      "type": "string",
+      "optionName": "error"
+    }
+  ],
+  "usedModules": {
+    "node": {
+      "ssh2-promise": "^1.0.3"
+    }
+  },
+  "properties": [
+    {
+      "group": "Run SSH Command",
+      "variables": [
+        {
+          "name": "sshKey",
+          "optionName": "sshKey",
+          "title": "SSH Key",
+          "type": "file",
+          "defaultValue": "",
+          "serverDataBindings": true,
+          "required": true
+        },
+        {
+          "name": "commands",
+          "optionName": "commands",
+          "title": "Commands",
+          "type": "text",
+          "defaultValue": "",
+          "serverDataBindings": true,
+          "required": true
+        },
+        {
+          "name": "hostDetail",
+          "optionName": "hostDetail",
+          "title": "Host",
+          "type": "text",
+          "defaultValue": "",
+          "serverDataBindings": true,
+          "required": true
+        },
+        {
+          "name": "username",
+          "optionName": "username",
+          "title": "Username",
+          "type": "text",
+          "defaultValue": "",
+          "serverDataBindings": true,
+          "required": true
+        },
+        {
+          "name": "name",
+          "optionName": "name",
+          "title": "Define Export",
+          "type": "text",
+          "required": true,
+          "defaultValue": "name",
+          "initDisplay": "name"
+        },
+        {
+          "name": "output",
+          "optionName": "output",
+          "title": "Output",
+          "type": "boolean",
+          "defaultValue": false
+        }
+      ]
+    }
+  ]
+}
