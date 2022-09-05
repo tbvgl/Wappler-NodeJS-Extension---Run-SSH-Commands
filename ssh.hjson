@@ -1,0 +1,288 @@
+[
+  {
+    "type": "sshruncommand",
+    "module": "ssh",
+    "action": "sshRunCommand",
+    "groupTitle": "SSH",
+    "groupIcon": "fas fa-lg fa-globe comp-exec",
+    "title": "SSH Run Command",
+    "icon": "fas fa-lg fa-terminal comp-exec ",
+    "dataPickObject": true,
+    "dataScheme": [
+      {
+        "name": "stdout",
+        "type": "text",
+        "optionName": "stdout"
+      },
+      {
+        "name": "stderror",
+        "type": "text",
+        "optionName": "stderror"
+      },
+      {
+        "name": "code",
+        "type": "number",
+        "optionName": "code"
+      }
+    ],
+    "usedModules": {
+      "node": {
+        "node-ssh": "^13.0.0"
+      }
+    },
+    "properties": [
+      {
+        "group": "SSH - Run Command",
+        "variables": [
+          {
+            "name": "name",
+            "optionName": "name",
+            "title": "Name",
+            "type": "text",
+            "required": true,
+            "defaultValue": "",
+            "help": "An identifier for this action"
+          },
+          {
+            "name": "hostDetail",
+            "optionName": "hostDetail",
+            "title": "Host",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The IP address of the server to connect to"
+          },
+          {
+            "name": "username",
+            "optionName": "username",
+            "title": "Username",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The username on the server for authentication"
+          },
+          {
+            "name": "sshKey",
+            "optionName": "sshKey",
+            "title": "SSH Key",
+            "type": "file",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The path to the ssh key for authentication"
+          },
+          {
+            "name": "passphrase",
+            "optionName": "passphrase",
+            "title": "Passphrase",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": false,
+            "help": "Optional: Passphrase for your SSH key"
+          },
+          {
+            "name": "remotepath",
+            "optionName": "remotepath",
+            "title": "Remote Path",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "initValue": "/",
+            "help": "The remote path in which to run the commands"
+          },
+          {
+            "name": "commands",
+            "optionName": "commands",
+            "title": "Commands",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The commands to run on the remote server"
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "sftpputfile",
+    "module": "ssh",
+    "action": "sftpPutFile",
+    "groupTitle": "SFTP",
+    "groupIcon": "fas fa-lg fa-server comp-files",
+    "title": "SFTP Put File",
+    "icon": "fas fa-lg fa-file-export comp-files",
+    "dataPickObject": true,
+    "dataScheme": [],
+    "usedModules": {
+      "node": {
+        "node-ssh": "^13.0.0"
+      }
+    },
+    "properties": [
+      {
+        "group": "SSH - Put File",
+        "variables": [
+          {
+            "name": "hostDetail",
+            "optionName": "hostDetail",
+            "title": "Host",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The IP address of the server to connect to"
+          },
+          {
+            "name": "username",
+            "optionName": "username",
+            "title": "Username",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The username on the server for authentication"
+          },
+          {
+            "name": "sshKey",
+            "optionName": "sshKey",
+            "title": "SSH Key",
+            "type": "file",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The path to the ssh key for authentication"
+          },
+          {
+            "name": "passphrase",
+            "optionName": "passphrase",
+            "title": "Passphrase",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": false,
+            "help": "Optional: Passphrase for your SSH key"
+          },
+          {
+            "name": "localpath",
+            "optionName": "localpath",
+            "title": "Local Path",
+            "type": "file",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "initValue": "/",
+            "help": "The path to the local file you want to put on the remote server"
+          },
+          {
+            "name": "remotepath",
+            "optionName": "remotepath",
+            "title": "Remote Path",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "initValue": "/",
+            "help": "The path to the remote file you want to put from your local server"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "sftppullfile",
+    "module": "ssh",
+    "action": "sftpPullFile",
+    "groupTitle": "SFTP",
+    "groupIcon": "fas fa-lg fa-server comp-files",
+    "title": "SFTP Pull File",
+    "icon": "fas fa-lg fa-file-import comp-files",
+    "dataPickObject": true,
+    "dataScheme": [],
+    "usedModules": {
+      "node": {
+        "node-ssh": "^13.0.0"
+      }
+    },
+    "properties": [
+      {
+        "group": "SSH - Pull File",
+        "variables": [
+          {
+            "name": "hostDetail",
+            "optionName": "hostDetail",
+            "title": "Host",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The IP address of the server to connect to"
+          },
+          {
+            "name": "username",
+            "optionName": "username",
+            "title": "Username",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The username on the server for authentication"
+          },
+          {
+            "name": "sshKey",
+            "optionName": "sshKey",
+            "title": "SSH Key",
+            "type": "file",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "help": "The path to the ssh key for authentication"
+          },
+          {
+            "name": "passphrase",
+            "optionName": "passphrase",
+            "title": "Passphrase",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": false,
+            "help": "Optional: Passphrase for your SSH key"
+          },
+          {
+            "name": "localpath",
+            "optionName": "localpath",
+            "title": "Local Path",
+            "type": "file",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "initValue": "/",
+            "help": "The path to the local file you want to put on the remote server"
+          },
+          {
+            "name": "remotepath",
+            "optionName": "remotepath",
+            "title": "Remote Path",
+            "type": "text",
+            "defaultValue": "",
+            "serverDataBindings": true,
+            "required": true,
+            "initValue": "/",
+            "help": "The path to the remote file you want to put from your local server"
+          }
+        ]
+      }
+    ]
+  }
+]
